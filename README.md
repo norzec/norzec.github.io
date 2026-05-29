@@ -1,2 +1,2 @@
 # norzec.github.io
-Website NORZEC - Engenharia, Dados, Inovação
+Website NORZEC - Engenharia . Dados . Inovação
