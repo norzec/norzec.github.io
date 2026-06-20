@@ -318,6 +318,85 @@ nav {
 .espec-card h4 { font-size: .88rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
 .espec-card p { font-size: .78rem; color: var(--muted); line-height: 1.55; }
 
+/* ══ KPIs STANDALONE ══ */
+.kpis {
+  background: var(--dark);
+  padding: 56px 0;
+}
+.kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.kpi {
+  text-align: center;
+  padding: 0 24px;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.kpi:last-child { border-right: none; }
+.kpi-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.kpi-label {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  line-height: 1.45;
+}
+.kpi-sub {
+  font-size: .68rem;
+  color: rgba(255,255,255,.28);
+  margin-top: 4px;
+  letter-spacing: .04em;
+}
+
+/* ══ PROCESSO ══ */
+.processo-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.processo-step {
+  padding: 28px 26px;
+  border-right: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  position: relative;
+  transition: background .15s;
+}
+.processo-step:hover { background: #F8FDF9; }
+.processo-step:nth-child(3n) { border-right: none; }
+.processo-step:nth-child(4),
+.processo-step:nth-child(5),
+.processo-step:nth-child(6) { border-bottom: none; }
+.passo-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .20em;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.passo-titulo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+  letter-spacing: .02em;
+}
+.passo-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+
 /* ══ FUNDADORES ══ */
 .founders-grid {
   display: grid;
@@ -581,11 +660,19 @@ footer {
   .founders-grid { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: 1fr; }
   .contacto-layout { grid-template-columns: 1fr; }
+  .kpis-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .kpi { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding: 16px 0; }
+  .kpi:nth-child(2n) { border-bottom: none; }
+  .processo-steps { grid-template-columns: 1fr; }
+  .processo-step { border-right: none; }
+  .processo-step:nth-child(n) { border-bottom: 1px solid var(--divider); }
+  .processo-step:last-child { border-bottom: none; }
   .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.10); padding: 16px 0; }
   .hero-stat:last-child { border-bottom: none; }
 }
 @media (max-width: 480px) {
   .espec-grid { grid-template-columns: 1fr; }
+  .kpis-grid { grid-template-columns: 1fr 1fr; }
   .founder-card { flex-direction: column; align-items: center; text-align: center; }
   .founder-tags { justify-content: center; }
   .section-title { font-size: 1.7rem; }
@@ -618,6 +705,7 @@ footer {
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#pilares">Pilares</a></li>
       <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#processo">Processo</a></li>
       <li><a href="#equipa">Equipa</a></li>
       <li><a href="#cases">Cases</a></li>
       <li><a href="#contacto" class="nav-cta">Contacto</a></li>
@@ -654,6 +742,34 @@ footer {
       <div class="hero-stat">
         <div class="hero-stat-value">+258</div>
         <div class="hero-stat-label">Baseados em Moçambique</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KPIs ══ -->
+<section class="kpis" aria-label="Resultados em números">
+  <div class="container">
+    <div class="kpis-grid">
+      <div class="kpi">
+        <div class="kpi-value">99%</div>
+        <div class="kpi-label">Precisão<br>Analítica</div>
+        <div class="kpi-sub">validado em Case Study #001</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">5+</div>
+        <div class="kpi-label">Sectores<br>de Impacto</div>
+        <div class="kpi-sub">agro, energia, saúde, água, logística</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">11</div>
+        <div class="kpi-label">Especialidades<br>Integradas</div>
+        <div class="kpi-sub">engenharia · dados · inovação</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">+258</div>
+        <div class="kpi-label">Baseados em<br>Moçambique</div>
+        <div class="kpi-sub">chimoio, manica</div>
       </div>
     </div>
   </div>
@@ -780,6 +896,54 @@ footer {
   </div>
 </section>
 
+<!-- ══ PROCESSO ══ -->
+<section class="section section-alt" id="processo">
+  <div class="container">
+    <span class="label">Como trabalhamos</span>
+    <h2 class="section-title">Do primeiro contacto<br>à entrega dos resultados</h2>
+    <p class="section-sub">Cada projecto segue um processo estruturado. Sabe exactamente o que esperar em cada etapa.</p>
+    <div class="processo-steps">
+
+      <div class="processo-step">
+        <div class="passo-num">PASSO 01</div>
+        <div class="passo-titulo">Primeiro Contacto</div>
+        <p class="passo-desc">Recebemos a sua solicitação e agendamos uma reunião (presencial ou videochamada) para compreender o problema, os dados disponíveis e os objectivos do projecto.</p>
+      </div>
+
+      <div class="processo-step">
+        <div class="passo-num">PASSO 02</div>
+        <div class="passo-titulo">Avaliação Técnica</div>
+        <p class="passo-desc">Estudamos o contexto, avaliamos as fontes de dados existentes, identificamos lacunas e definimos as abordagens metodológicas mais adequadas à situação.</p>
+      </div>
+
+      <div class="processo-step">
+        <div class="passo-num">PASSO 03</div>
+        <div class="passo-titulo">Proposta Personalizada</div>
+        <p class="passo-desc">Enviamos uma proposta técnica e orçamental clara: metodologia, cronograma e investimento. Sem surpresas. Total transparência desde o início.</p>
+      </div>
+
+      <div class="processo-step">
+        <div class="passo-num">PASSO 04</div>
+        <div class="passo-titulo">Execução</div>
+        <p class="passo-desc">Realizamos as análises, desenvolvemos os modelos e produzimos os entregáveis com rigor científico — usando ferramentas validadas e dados de fontes confiáveis.</p>
+      </div>
+
+      <div class="processo-step">
+        <div class="passo-num">PASSO 05</div>
+        <div class="passo-titulo">Entrega dos Resultados</div>
+        <p class="passo-desc">Os resultados chegam em relatórios organizados, dashboards ou apresentações — prontos para decisão, publicação ou apresentação a stakeholders.</p>
+      </div>
+
+      <div class="processo-step">
+        <div class="passo-num">PASSO 06</div>
+        <div class="passo-titulo">Acompanhamento</div>
+        <p class="passo-desc">Oferecemos suporte contínuo dentro do âmbito acordado para responder a revisores, adaptar resultados a novos contextos ou expandir o escopo do trabalho.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══ EQUIPA ══ -->
 <section class="section section-alt" id="equipa">
   <div class="container">
@@ -866,12 +1030,12 @@ footer {
       </div>
 
       <div class="case-soon">
-        <div class="case-soon-icon"> </div>
+        <div class="case-soon-icon">📊</div>
         <p><strong>Case #002</strong><br>Em desenvolvimento</p>
       </div>
 
       <div class="case-soon">
-        <div class="case-soon-icon"> </div>
+        <div class="case-soon-icon">⚡</div>
         <p><strong>Case #003</strong><br>Energia solar fotovoltaica</p>
       </div>
 
