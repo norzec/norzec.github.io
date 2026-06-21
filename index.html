@@ -627,6 +627,96 @@ nav {
 .social-btn:hover { color: var(--green); border-color: var(--green); }
 .social-btn svg { width: 13px; height: 13px; fill: currentColor; }
 
+/* ══ NOTÍCIAS ══ */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 48px;
+}
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--divider);
+  border-top: 3px solid var(--green);
+  border-radius: var(--radius);
+  padding: 24px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow .20s, transform .15s;
+}
+.news-card:hover { box-shadow: var(--glow); transform: translateY(-3px); }
+.news-date {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green-d);
+}
+.news-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.25;
+}
+.news-excerpt {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+.news-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+
+/* ══ FAQ ══ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 48px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.faq-item {
+  border-bottom: 1px solid var(--divider);
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--dark);
+  cursor: pointer;
+  list-style: none;
+  transition: background .15s;
+  user-select: none;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--green);
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform .20s;
+}
+details[open] > .faq-question { background: #F8FDF9; }
+details[open] > .faq-question::after { content: '−'; }
+.faq-answer {
+  padding: 0 24px 20px;
+  background: #F8FDF9;
+}
+.faq-answer p {
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 /* ══ FOOTER ══ */
 footer {
   background: var(--dark);
@@ -659,6 +749,7 @@ footer {
   .espec-grid { grid-template-columns: 1fr 1fr; }
   .founders-grid { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: 1fr; }
+  .news-grid { grid-template-columns: 1fr; }
   .contacto-layout { grid-template-columns: 1fr; }
   .kpis-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .kpi { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding: 16px 0; }
@@ -708,6 +799,8 @@ footer {
       <li><a href="#processo">Processo</a></li>
       <li><a href="#equipa">Equipa</a></li>
       <li><a href="#cases">Cases</a></li>
+      <li><a href="#noticias">Notícias</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto" class="nav-cta">Contacto</a></li>
     </ul>
   </div>
@@ -783,32 +876,30 @@ footer {
     <div class="sobre-layout">
       <div class="sobre-body">
         <p>
-          NORZEC, LIMITADA é uma sociedade de consultoria, engenharia e inovação
-          tecnológica, sediada em Chimoio, Manica, Moçambique. Integramos
-          conhecimento técnico de ponta com capacidade de gestão estratégica.
+          NORZEC, LIMITADA é uma sociedade de consultoria, engenharia e inovação fundada em Chimoio, Manica, Moçambique. Nasceu da convicção de que dados rigorosos e tecnologia aplicada transformam decisões — na agricultura, na energia, na saúde e na gestão ambiental.
         </p>
         <p>
-          Fundada por especialistas com vasta experiência em engenharia, ciência
-          de dados e inovação tecnológica, a NORZEC existe para preencher uma
-          lacuna crítica: trazer rigor analítico e soluções tecnológicas de nível
-          internacional para os desafios concretos de África.
+          Iniciámos a nossa actividade em Julho de 2025 sob o nome KALIMA. Em 2026, consolidámos a marca como NORZEC, alinhando a identidade da empresa à sua visão de longo prazo para a região austral de África.
+        </p>
+        <p>
+          Trabalhamos com investigadores, agricultores, empresas e instituições públicas — de pequenos produtores às grandes multinacionais — entregando análises e sistemas que geram valor mensurável.
         </p>
       </div>
       <div class="card-trio">
         <div class="mvv-card">
           <div class="mvv-label">Missão</div>
-          <h3>Soluções que transformam</h3>
-          <p>Proporcionar soluções integradas de engenharia, consultoria técnica e inovação que alavancam o desenvolvimento sustentável e a transformação digital.</p>
+          <h3>Transformar dados em decisões</h3>
+          <p>Fornecer soluções técnicas de alta precisão que empoderam organizações e comunidades a tomarem decisões baseadas em evidências científicas.</p>
         </div>
         <div class="mvv-card">
           <div class="mvv-label">Visão</div>
-          <h3>Referência regional</h3>
-          <p>Consolidar-se como referência em consultoria integrada, inovação tecnológica e transformação digital em África austral.</p>
+          <h3>Referência técnica em África Austral</h3>
+          <p>Ser a empresa de referência em consultoria técnica, ciência de dados e inovação tecnológica na região austral africana até 2030.</p>
         </div>
         <div class="mvv-card">
           <div class="mvv-label">Valores</div>
-          <h3>Integridade e excelência</h3>
-          <p>Sustentabilidade · Inovação · Excelência Técnica · Integridade · Comprometimento com o desenvolvimento africano.</p>
+          <h3>Rigor, transparência e impacto</h3>
+          <p>Trabalho científico rigoroso, comunicação clara com os clientes e resultados que criam impacto real e mensurável nas comunidades.</p>
         </div>
       </div>
     </div>
@@ -818,24 +909,24 @@ footer {
 <!-- ══ PILARES ══ -->
 <section class="section section-alt" id="pilares">
   <div class="container">
-    <span class="label">Nossos pilares</span>
-    <h2 class="section-title">Três competências,<br>uma solução integrada</h2>
-    <p class="section-sub">Cada pilar é uma unidade autónoma de especialidade. Em conjunto, cobrem o ciclo completo de qualquer projecto de desenvolvimento.</p>
+    <span class="label">Os nossos pilares</span>
+    <h2 class="section-title">Três pilares,<br>um propósito</h2>
+    <p class="section-sub">A NORZEC actua em três domínios integrados que se reforçam mutuamente para gerar soluções completas.</p>
     <div class="pilares-grid">
       <div class="pilar">
         <div class="pilar-num">01</div>
         <h3>Engenharia</h3>
-        <p>Consultoria técnica, projectos executivos, supervisão de obras, infraestruturas hidráulicas e geotecnologias aplicadas.</p>
+        <p>Engenharia de precisão, infraestruturas hidráulicas, sistemas de energia renovável e gestão de projectos técnicos complexos em Moçambique e na região.</p>
       </div>
       <div class="pilar">
         <div class="pilar-num">02</div>
-        <h3>Dados</h3>
-        <p>Análise de dados, inteligência de negócios, big data, ciência de dados e sistemas de apoio à decisão baseados em evidência.</p>
+        <h3>Ciência de Dados</h3>
+        <p>Estatística aplicada, machine learning, processamento geoespacial (GEE/CHIRPS), análise climatológica e modelação preditiva com Python e R.</p>
       </div>
       <div class="pilar">
         <div class="pilar-num">03</div>
-        <h3>Inovação</h3>
-        <p>Pesquisa &amp; Desenvolvimento, tecnologias emergentes, propriedade intelectual e transformação digital de organizações.</p>
+        <h3>Inovação &amp; Tecnologia</h3>
+        <p>Desenvolvimento de software (Flask, React, Shiny), sistemas de informação geográfica, automação de processos e transferência de tecnologia para o sector público e privado.</p>
       </div>
     </div>
   </div>
@@ -903,96 +994,81 @@ footer {
     <h2 class="section-title">Do primeiro contacto<br>à entrega dos resultados</h2>
     <p class="section-sub">Cada projecto segue um processo estruturado. Sabe exactamente o que esperar em cada etapa.</p>
     <div class="processo-steps">
-
       <div class="processo-step">
         <div class="passo-num">PASSO 01</div>
         <div class="passo-titulo">Primeiro Contacto</div>
         <p class="passo-desc">Recebemos a sua solicitação e agendamos uma reunião (presencial ou videochamada) para compreender o problema, os dados disponíveis e os objectivos do projecto.</p>
       </div>
-
       <div class="processo-step">
         <div class="passo-num">PASSO 02</div>
         <div class="passo-titulo">Avaliação Técnica</div>
         <p class="passo-desc">Estudamos o contexto, avaliamos as fontes de dados existentes, identificamos lacunas e definimos as abordagens metodológicas mais adequadas à situação.</p>
       </div>
-
       <div class="processo-step">
         <div class="passo-num">PASSO 03</div>
         <div class="passo-titulo">Proposta Personalizada</div>
         <p class="passo-desc">Enviamos uma proposta técnica e orçamental clara: metodologia, cronograma e investimento. Sem surpresas. Total transparência desde o início.</p>
       </div>
-
       <div class="processo-step">
         <div class="passo-num">PASSO 04</div>
         <div class="passo-titulo">Execução</div>
         <p class="passo-desc">Realizamos as análises, desenvolvemos os modelos e produzimos os entregáveis com rigor científico — usando ferramentas validadas e dados de fontes confiáveis.</p>
       </div>
-
       <div class="processo-step">
         <div class="passo-num">PASSO 05</div>
         <div class="passo-titulo">Entrega dos Resultados</div>
         <p class="passo-desc">Os resultados chegam em relatórios organizados, dashboards ou apresentações — prontos para decisão, publicação ou apresentação a stakeholders.</p>
       </div>
-
       <div class="processo-step">
         <div class="passo-num">PASSO 06</div>
         <div class="passo-titulo">Acompanhamento</div>
         <p class="passo-desc">Oferecemos suporte contínuo dentro do âmbito acordado para responder a revisores, adaptar resultados a novos contextos ou expandir o escopo do trabalho.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- ══ EQUIPA ══ -->
-<section class="section section-alt" id="equipa">
+<section class="section" id="equipa">
   <div class="container">
-    <span class="label">Sócios Fundadores</span>
+    <span class="label">Quem somos</span>
     <h2 class="section-title">A equipa por detrás da NORZEC</h2>
-    <p class="section-sub">Especialistas com formação técnica certificada e experiência prática no desenvolvimento de soluções para África.</p>
+    <p class="section-sub">Fundada por especialistas com experiência prática em ciência de dados, engenharia e inovação tecnológica.</p>
     <div class="founders-grid">
 
-      <!-- Francisco Noris -->
       <div class="founder-card">
         <div class="founder-avatar">
-          <img src="foto_francisco.jpg" alt="Francisco Noris — Diretor Geral">
+          <img src="data:image/jpeg;base64,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" alt="Francisco Noris — Diretor Geral">
         </div>
         <div class="founder-info">
           <div class="founder-name">Francisco Noris</div>
-          <div class="founder-role">Diretor Geral</div>
-          <p class="founder-bio">
-            Especialista em ciência de dados, energia renovável e IA em nuvem.
-            Lidera a estratégia técnica da NORZEC com foco em soluções analíticas
-            aplicadas ao desenvolvimento sustentável em Moçambique.
-          </p>
+          <div class="founder-role">Diretor Geral · Consultor Sénior</div>
+          <p class="founder-bio">Especialista em ciência de dados geoespaciais, climatologia aplicada e biometeorologia. Desenvolve pipelines de análise em Python e R, modelos de machine learning e sistemas de informação ambiental para sectores agrícola, energético e académico.</p>
           <div class="founder-tags">
-            <span class="tag">Ciência de Dados</span>
+            <span class="tag">Python &amp; R</span>
+            <span class="tag">Google Earth Engine</span>
             <span class="tag">Machine Learning</span>
-            <span class="tag">Energia Solar</span>
-            <span class="tag">IA Azure</span>
-            <span class="tag tag-cert">SENAI · Solar FV · 60h</span>
-            <span class="tag tag-cert">Microsoft AI-900</span>
+            <span class="tag">Climatologia</span>
+            <span class="tag">Biometeorologia</span>
+            <span class="tag-cert tag">SENAI Solar FV</span>
+            <span class="tag-cert tag">Microsoft AI-900</span>
           </div>
         </div>
       </div>
 
-      <!-- Domingos Zeca -->
       <div class="founder-card">
         <div class="founder-avatar">
-          <img src="foto_domingos.jpg" alt="Domingos Zeca — Diretor Comercial">
+          <img src="data:image/jpeg;base64,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" alt="Domingos Zeca — Diretor Comercial">
         </div>
         <div class="founder-info">
           <div class="founder-name">Domingos Zeca</div>
           <div class="founder-role">Diretor Comercial</div>
-          <p class="founder-bio">
-            Responsável pela estratégia comercial, desenvolvimento de parcerias e
-            expansão de mercado. Traduz capacidades técnicas em valor concreto
-            para clientes e parceiros institucionais em toda a região.
-          </p>
+          <p class="founder-bio">Responsável pelo desenvolvimento de negócio, parcerias estratégicas e relação com clientes institucionais e corporativos. Actua na articulação entre as soluções técnicas da NORZEC e as necessidades reais do mercado moçambicano.</p>
           <div class="founder-tags">
-            <span class="tag">Desenvolvimento Comercial</span>
+            <span class="tag">Desenvolvimento de Negócio</span>
             <span class="tag">Parcerias Estratégicas</span>
-            <span class="tag">Gestão de Projetos</span>
+            <span class="tag">Gestão Comercial</span>
+            <span class="tag">Relação Institucional</span>
           </div>
         </div>
       </div>
@@ -1001,8 +1077,8 @@ footer {
   </div>
 </section>
 
-<!-- ══ CASOS DE ESTUDO ══ -->
-<section class="section" id="cases">
+<!-- ══ CASES ══ -->
+<section class="section section-alt" id="cases">
   <div class="container">
     <span class="label">Portfólio</span>
     <h2 class="section-title">Casos de estudo</h2>
@@ -1023,9 +1099,7 @@ footer {
           </ul>
         </div>
         <div class="case-footer">
-          <a href="CaseStudy001/NORZEC_CaseStudy001_Report.html" class="case-link" target="_blank">
-            Ver relatório completo →
-          </a>
+          <a href="CaseStudy001/NORZEC_CaseStudy001_Report.html" class="case-link" target="_blank">Ver relatório completo →</a>
         </div>
       </div>
 
@@ -1037,7 +1111,7 @@ footer {
         <div class="case-body">
           <div class="case-meta">Consultoria Académica · Ciências Agrárias · 2025</div>
           <ul class="case-outcomes">
-            <li>Dois pipelines paralelos desenvolvidos: paramétrico (ANOVA + Tukey HSD) e não-paramétrico (Kruskal-Wallis + Dunn/Bonferroni).</li>
+            <li>Dois pipelines paralelos: paramétrico (ANOVA + Tukey HSD) e não-paramétrico (Kruskal-Wallis + Dunn/Bonferroni).</li>
             <li>Validação de pressupostos com Shapiro-Wilk e Levene para escolha rigorosa do teste correcto.</li>
             <li>Figuras publicáveis com letras de significância (ggplot2 + cowplot), prontas para submissão a revista científica.</li>
           </ul>
@@ -1057,7 +1131,7 @@ footer {
           <ul class="case-outcomes">
             <li>PCA aplicado à selecção e compressão de variáveis climáticas preditoras de produtividade (t/ha).</li>
             <li>Comparação de 5 modelos: Random Forest, XGBoost, KNN, SVR e GAM com validação Leave-One-Out.</li>
-            <li>Pipeline reprodutível entregue ao cliente com interpretação agronómica dos resultados.</li>
+            <li>Pipeline reprodutível com interpretação agronómica detalhada dos resultados.</li>
           </ul>
         </div>
         <div class="case-footer">
@@ -1068,24 +1142,6 @@ footer {
       <div class="case-card">
         <div class="case-head">
           <div class="case-num">CASE · 004</div>
-          <div class="case-title">Frequência e Intensidade de Ondas de Calor e Frio em Maputo</div>
-        </div>
-        <div class="case-body">
-          <div class="case-meta">Climatologia Urbana · Publicação Científica · 2026</div>
-          <ul class="case-outcomes">
-            <li>Caracterização histórica de eventos extremos de temperatura em Maputo usando série temporal de longa duração.</li>
-            <li>Metodologia baseada em limiares percentílicos (P10/P90) para identificação robusta de extremos.</li>
-            <li>Visualizações para publicação científica, incluindo mapas de frequência e tendência temporal.</li>
-          </ul>
-        </div>
-        <div class="case-footer">
-          <span class="case-link">Python · pandas · numpy · matplotlib · análise de extremos</span>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-head">
-          <div class="case-num">CASE · 005</div>
           <div class="case-title">MICLAU — Sistema de Gestão Comercial com Dados em Tempo Real</div>
         </div>
         <div class="case-body">
@@ -1103,7 +1159,7 @@ footer {
 
       <div class="case-card">
         <div class="case-head">
-          <div class="case-num">CASE · 006</div>
+          <div class="case-num">CASE · 005</div>
           <div class="case-title">Sistema Desktop de Conforto Térmico para Equinos</div>
         </div>
         <div class="case-body">
@@ -1111,7 +1167,7 @@ footer {
           <ul class="case-outcomes">
             <li>Cálculo automático de pressão barométrica por altitude e entalpia específica do ar ambiente.</li>
             <li>Classificação de conforto em 3 zonas: conforto, estresse por calor e estresse por frio.</li>
-            <li>Interface desktop Tkinter intuitiva para uso em campo sem necessidade de ligação à Internet.</li>
+            <li>Interface desktop Tkinter para uso em campo sem necessidade de ligação à Internet.</li>
           </ul>
         </div>
         <div class="case-footer">
@@ -1119,12 +1175,117 @@ footer {
         </div>
       </div>
 
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-num">CASE · 006</div>
+          <div class="case-title">Apoio Técnico a TCC — Dinâmica Ambiental do Estuário dos Bons Sinais</div>
+        </div>
+        <div class="case-body">
+          <div class="case-meta">Consultoria Académica · Análise Geoespacial · 2026</div>
+          <ul class="case-outcomes">
+            <li>Análise de séries temporais de SST (MODIS), clorofila-a (Sentinel-2) e precipitação (NASA POWER) para Quelimane (2020–2024).</li>
+            <li>Construção de Índice de Adequação Ambiental (IAA) composto com 5 fases de execução em 30 dias.</li>
+            <li>Entregáveis: TCC completo, scripts GEE comentados, notebook Python reproduzível e guião de defesa.</li>
+          </ul>
+        </div>
+        <div class="case-footer">
+          <span class="case-link">Google Earth Engine · Python · MODIS · Sentinel-2 · NASA POWER</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ NOTÍCIAS ══ -->
+<section class="section" id="noticias">
+  <div class="container">
+    <span class="label">Actualizações</span>
+    <h2 class="section-title">Notícias e publicações</h2>
+    <p class="section-sub">Boletins técnicos, actualizações de projectos e novidades da NORZEC.</p>
+    <div class="news-grid">
+
+      <article class="news-card">
+        <div class="news-date">Agosto 2025</div>
+        <h3 class="news-title">Boletim Agroclimático de Chimoio — Edição 02</h3>
+        <p class="news-excerpt">Análise das condições agroclimáticas de Agosto 2025 em Chimoio: índices SPI, temperatura, humidade relativa e análise de anomalias ENSO/IOD para 6 sectores produtivos.</p>
+        <div class="news-tags"><span class="tag">Climatologia</span><span class="tag">Chimoio</span><span class="tag">Boletim</span></div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-date">Julho 2025</div>
+        <h3 class="news-title">Boletim Agroclimático de Chimoio — Edição 01</h3>
+        <p class="news-excerpt">Primeira edição do boletim mensal de Chimoio. Análise completa de precipitação, temperatura e indicadores de seca com impacto directo na agricultura, pecuária e recursos hídricos.</p>
+        <div class="news-tags"><span class="tag">Climatologia</span><span class="tag">Chimoio</span><span class="tag">Boletim</span></div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-date">Junho 2026</div>
+        <h3 class="news-title">NORZEC lança serviço de Consultoria Académica</h3>
+        <p class="news-excerpt">Novo serviço de apoio técnico-académico: análise estatística para dissertações, modelação geoespacial para TCCs e orientação para candidatura a bolsas de estudo internacionais.</p>
+        <div class="news-tags"><span class="tag">Académico</span><span class="tag">Bolsas</span><span class="tag">Novo Serviço</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <span class="label">Perguntas frequentes</span>
+    <h2 class="section-title">Tem dúvidas?<br>Temos respostas.</h2>
+    <p class="section-sub">As questões que os nossos clientes mais colocam antes de iniciarem um projecto.</p>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">Que tipo de clientes a NORZEC serve?</summary>
+        <div class="faq-answer">
+          <p>Servimos investigadores académicos, agricultores e cooperativas, empresas privadas, instituições públicas e organizações internacionais. Os nossos projectos vão desde análises de dados para publicações científicas até sistemas de gestão comercial e boletins climatológicos para a tomada de decisão.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Trabalham fora de Chimoio / Moçambique?</summary>
+        <div class="faq-answer">
+          <p>Sim. A maioria dos nossos serviços é prestada remotamente, o que nos permite servir clientes em qualquer parte de Moçambique, na região austral africana e na diáspora. Deslocamo-nos para projectos que exigem trabalho de campo, mediante orçamentação prévia.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Podem apoiar a minha dissertação ou TCC?</summary>
+        <div class="faq-answer">
+          <p>Sim. Oferecemos consultoria técnico-académica completa: selecção e processamento de dados, análise estatística (R ou Python), modelação geoespacial, geração de figuras para publicação e apoio à defesa oral. O serviço é adaptado às exigências da sua instituição e ao tema da sua pesquisa.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Como funciona o processo de contratação?</summary>
+        <div class="faq-answer">
+          <p>Simples: contacte-nos via WhatsApp ou email descrevendo o seu projecto. Agendamos uma reunião (presencial ou videochamada) sem custo. Após compreendermos o âmbito, enviamos uma proposta técnica e orçamental em até 3 dias úteis. O trabalho inicia após confirmação e pagamento da primeira parcela (geralmente 50%).</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Qual o prazo típico de entrega de um projecto?</summary>
+        <div class="faq-answer">
+          <p>Depende da complexidade. Uma análise estatística simples para dissertação pode estar pronta em 7–14 dias. Projectos de modelação geoespacial completos levam 30 dias. Sistemas de software são desenvolvidos por fases, com entregas intermédias. Definimos o prazo exacto na proposta e cumprimo-lo.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Os dados climáticos e ambientais que utilizam são fiáveis?</summary>
+        <div class="faq-answer">
+          <p>Sim. Trabalhamos exclusivamente com fontes científicas certificadas: CHIRPS (UC Santa Barbara), NASA POWER, NOAA (dados ENSO/ONI), Sentinel-2 (ESA) e MODIS (NASA). Todos os dados são públicos, de acesso gratuito, e utilizados pela comunidade científica internacional.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>
 
 <!-- ══ CONTACTO ══ -->
-<section class="section section-alt" id="contacto">
+<section class="section" id="contacto">
   <div class="container">
     <span class="label">Contacto</span>
     <h2 class="section-title">Estamos prontos para ajudar</h2>
@@ -1158,13 +1319,10 @@ footer {
           </div>
         </div>
       </div>
-
       <div class="contacto-box">
         <h3>Pronto para o próximo passo?</h3>
         <p>Envie-nos uma mensagem via WhatsApp ou email e a nossa equipa responde em menos de 24 horas.</p>
-        <a href="https://wa.me/258878787963" class="btn-primary">
-          Mensagem via WhatsApp
-        </a>
+        <a href="https://wa.me/258878787963" class="btn-primary">Mensagem via WhatsApp</a>
         <div class="social-row">
           <a href="https://www.linkedin.com/company/norzec-lda/" class="social-btn" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M20.447 20.452H17V14.882c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.98 1.98 0 01-1.98-1.98 1.98 1.98 0 011.98-1.98 1.98 1.98 0 011.98 1.98 1.98 1.98 0 01-1.98 1.98zm1.713 13.019H3.623V9h3.427v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
