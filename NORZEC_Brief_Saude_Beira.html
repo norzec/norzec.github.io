@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clima e Risco Vectorial em Beira · NORZEC</title>
+<meta name="description" content="Janelas de risco epidemiológico climático em Beira, Sofala — NASA POWER 2015–2023.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#0B1411;--green:#10B981;--teal:#0DA09C;--pale:#F0FAF6;--gray:#94a3b8;--lgray:#1e2d29;--white:#FFFFFF;--orange:#F97316;--amber:#F59E0B;--red:#EF4444}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--dark);color:var(--white);font-family:'Barlow',sans-serif;line-height:1.6}
+nav{background:rgba(11,20,17,.97);border-bottom:1px solid var(--green);padding:12px 28px;display:flex;justify-content:space-between;align-items:center}
+.nb{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green);text-decoration:none}
+.nb span{color:var(--gray);font-weight:400;font-size:1rem}
+nav a.back{color:var(--gray);text-decoration:none;font-size:.82rem;border:1px solid #2a3f35;border-radius:4px;padding:4px 12px}
+nav a.back:hover{color:var(--green)}
+.hero{background:linear-gradient(135deg,#0B1411,#0F2218,#0A1A14);padding:56px 28px 44px;border-bottom:1px solid #1e3828}
+.hero-inner{max-width:860px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#1A2820;border:1px solid var(--green);border-radius:4px;padding:4px 12px;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:10px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero-sub{color:var(--gray);font-size:.98rem;max-width:600px}
+.kpi-row{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.kpi{text-align:center;min-width:100px}
+.kpi-v{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;line-height:1}
+.kpi-l{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--gray);margin-top:3px}
+.body{max-width:860px;margin:0 auto;padding:44px 28px}
+.card{background:#0F2218;border:1px solid #1e3828;border-radius:10px;padding:24px;margin-bottom:20px}
+.card:hover{border-color:#2a5040}
+.card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;color:var(--green);text-transform:uppercase;margin-bottom:10px}
+.card p{font-size:.87rem;color:var(--gray);line-height:1.65}
+.card p strong{color:var(--white)}
+.badge{display:inline-block;padding:2px 9px;border-radius:3px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-right:6px;margin-bottom:4px}
+.badge-r{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.badge-a{background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.3)}
+.badge-g{background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.3)}
+.bar-wrap{margin-top:12px}
+.bar-label{display:flex;justify-content:space-between;font-size:.75rem;color:var(--gray);margin-bottom:4px}
+.bar-track{background:#1e3828;border-radius:4px;height:8px;overflow:hidden}
+.bar-fill{height:8px;border-radius:4px;transition:width .5s}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.highlight{background:linear-gradient(90deg,rgba(16,185,129,.08),transparent);border-left:3px solid var(--green);padding:12px 16px;border-radius:0 8px 8px 0;font-size:.87rem;color:var(--white);margin:16px 0}
+.cta-box{background:linear-gradient(135deg,#0F2A22,#122418);border:1px solid var(--green);border-radius:12px;padding:32px;text-align:center;margin-top:32px}
+.cta-box h3{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:8px}
+.cta-box p{color:var(--gray);font-size:.9rem;margin-bottom:20px}
+.btn{display:inline-block;background:var(--green);color:#000;font-weight:700;font-size:.88rem;padding:11px 28px;border-radius:6px;text-decoration:none;margin:4px}
+.btn-o{background:transparent;color:var(--green);border:1px solid var(--green)}
+.fonte{margin-top:40px;padding-top:20px;border-top:1px solid #1e3828;font-size:.76rem;color:#4a6860}
+footer{background:#050D0A;border-top:1px solid #1e3828;padding:24px 28px;text-align:center}
+footer p{color:var(--gray);font-size:.78rem}
+footer a{color:var(--green);text-decoration:none}
+@media(max-width:640px){.kpi-row{gap:16px}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nb">NORZEC <span>Brief</span></a>
+  <a href="index.html" class="back">← Voltar ao site</a>
+</nav>
+
+<section class="hero">
+<div class="hero-inner">
+  <span class="eyebrow">🏥 SAÚDE PÚBLICA · BEIRA, SOFALA</span>
+  <h1>Clima e <em>Risco Vectorial</em><br>em Beira</h1>
+  <p class="hero-sub">Janelas de risco epidemiológico derivadas de temperatura, humidade e precipitação — dados NASA POWER 2015–2023.</p>
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-v" style="color:var(--amber)">26.6°C</div><div class="kpi-l">T. média anual</div></div>
+    <div class="kpi"><div class="kpi-v" style="color:var(--amber)">69.1%</div><div class="kpi-l">Humidade média</div></div>
+    <div class="kpi"><div class="kpi-v" style="color:var(--red)">Out–Mar</div><div class="kpi-l">Janela vectorial alta</div></div>
+    <div class="kpi"><div class="kpi-v" style="color:var(--amber)">6.0%</div><div class="kpi-l">Dias TDI&gt;28°C</div></div>
+  </div>
+</div>
+</section>
+<div class="body">
+  <div class="card">
+    <h3>🦟 Risco vectorial — Malária e Arboviroses</h3>
+    <p><span class="badge badge-r">Janela Alta: Out–Mar</span><span class="badge badge-a">T+HR favoráveis ao Anopheles</span></p>
+    <p style="margin-top:10px">A combinação de <strong>26.6°C</strong> de temperatura média e <strong>69.1%</strong> de humidade relativa cria condições favoráveis à sobrevivência e reprodução de Anopheles gambiae s.l. ao longo de todo o ano. O pico de risco ocorre em <strong>Outubro–Março</strong>, quando temperatura e precipitação são simultaneamente elevadas — aumentando criadouros disponíveis e a velocidade de desenvolvimento do parasita.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>🌡 Temperatura por mês</h3>
+      <p>Meses acima de 26°C (limiar óptimo para P. falciparum):<br><br>
+      <strong>Jan–Abr:</strong> 26.4–28.9°C ✓<br>
+      <strong>Mai–Jul:</strong> 22.1–24.5°C — abaixo do limiar<br>
+      <strong>Set–Dez:</strong> 26.6–29.5°C ✓<br><br>
+      <span style="color:var(--gray);font-size:.82rem">Limiar de 26°C: desenvolvimento acelerado de P. falciparum. Não indica presença do parasita — indica condição climática favorável.</span></p>
+    </div>
+    <div class="card">
+      <h3>💧 Criadouros sazonais</h3>
+      <p>7.1 episódios/ano com precipitação &gt; 20mm — potenciais eventos de criação de poças.<br><br>
+      Máximo diário: <strong>263.7 mm</strong> — risco de inundação urbana e contaminação de fontes.<br><br>
+      Período Nov–Abr: <strong>722 mm</strong> (88.4% do total).<br><br>
+      <span style="color:var(--gray);font-size:.82rem">Pico de criadouros: Janeiro–Março.</span></p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🌡 Desconforto Térmico (TDI)</h3>
+    <p>TDI = T_med − 0.55 × (1 − 0.01 × HR) × (T_med − 14.5)</p>
+    <p style="margin-top:8px">Dias com TDI &gt; 28°C (desconforto moderado a severo): <strong>6.0%</strong> do período analisado — concentrados em Setembro–Novembro (baixa humidade + alta temperatura).</p>
+    <div class="highlight" style="margin-top:12px">📌 Grupos vulneráveis (idosos, crianças, doentes crónicos) têm risco elevado nestes períodos. Instalações de saúde sem climatização são pontos críticos.</div>
+  </div>
+  <div class="card">
+    <h3>🛡 Recomendações NORZEC</h3>
+    <p>
+      <strong>1. Calendário epidemiológico climático</strong> — probabilidade de janela vectorial por semana, baseado em dados históricos.<br><br>
+      <strong>2. Alerta precoce de episódios de chuva extrema</strong> — eventos &gt;50mm têm implicações em sistemas de água e saneamento.<br><br>
+      <strong>3. Índice de conforto térmico para instalações</strong> — identificação de períodos de risco para pacientes internados.<br><br>
+      <strong>4. Integração com dados epidemiológicos</strong> — correlação clima-casos para planeamento de intervenções.
+    </p>
+  </div>
+  <div class="cta-box">
+    <h3>Inteligência climática para saúde pública</h3>
+    <p>A NORZEC correlaciona dados climáticos com janelas epidemiológicas para apoiar gestores de saúde e ONGs em Moçambique.</p>
+    <a href="index.html#contacto" class="btn">Falar com um especialista</a>
+    <a href="NORZEC_Case002_Beira_ClimateIntelligence.html" class="btn btn-o">Relatório completo</a>
+  </div>
+  <div class="fonte">Fonte: NASA POWER LARC · 2015–2023 · TDI: Thom (1959). Limiar vectorial: literatura epidemiológica. Os dados mostram condições climáticas — não confirmam presença ou ausência de vectores.</div>
+</div>
+<footer>
+  <p>NORZEC, LIMITADA · Chimoio, Manica, Moçambique · <a href="https://norzec.github.io">norzec.github.io</a></p>
+  <p style="margin-top:6px">Dados: NASA POWER LARC · Beira, Sofala · 2015–2023 · Física postulada · Incerteza declarada</p>
+</footer>
+</body></html>

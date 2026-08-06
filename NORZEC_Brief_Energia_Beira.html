@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potencial Solar em Beira · NORZEC</title>
+<meta name="description" content="Dados de radiação solar para dimensionamento fotovoltaico em Beira, Sofala — NASA POWER 2015–2023.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#0B1411;--green:#10B981;--teal:#0DA09C;--pale:#F0FAF6;--gray:#94a3b8;--lgray:#1e2d29;--white:#FFFFFF;--orange:#F97316;--amber:#F59E0B;--red:#EF4444}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--dark);color:var(--white);font-family:'Barlow',sans-serif;line-height:1.6}
+nav{background:rgba(11,20,17,.97);border-bottom:1px solid var(--green);padding:12px 28px;display:flex;justify-content:space-between;align-items:center}
+.nb{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green);text-decoration:none}
+.nb span{color:var(--gray);font-weight:400;font-size:1rem}
+nav a.back{color:var(--gray);text-decoration:none;font-size:.82rem;border:1px solid #2a3f35;border-radius:4px;padding:4px 12px}
+nav a.back:hover{color:var(--green)}
+.hero{background:linear-gradient(135deg,#0B1411,#0F2218,#0A1A14);padding:56px 28px 44px;border-bottom:1px solid #1e3828}
+.hero-inner{max-width:860px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#1A2820;border:1px solid var(--green);border-radius:4px;padding:4px 12px;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:10px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero-sub{color:var(--gray);font-size:.98rem;max-width:600px}
+.kpi-row{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.kpi{text-align:center;min-width:100px}
+.kpi-v{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;line-height:1}
+.kpi-l{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--gray);margin-top:3px}
+.body{max-width:860px;margin:0 auto;padding:44px 28px}
+.card{background:#0F2218;border:1px solid #1e3828;border-radius:10px;padding:24px;margin-bottom:20px}
+.card:hover{border-color:#2a5040}
+.card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;color:var(--green);text-transform:uppercase;margin-bottom:10px}
+.card p{font-size:.87rem;color:var(--gray);line-height:1.65}
+.card p strong{color:var(--white)}
+.badge{display:inline-block;padding:2px 9px;border-radius:3px;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-right:6px;margin-bottom:4px}
+.badge-r{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.badge-a{background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.3)}
+.badge-g{background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.3)}
+.bar-wrap{margin-top:12px}
+.bar-label{display:flex;justify-content:space-between;font-size:.75rem;color:var(--gray);margin-bottom:4px}
+.bar-track{background:#1e3828;border-radius:4px;height:8px;overflow:hidden}
+.bar-fill{height:8px;border-radius:4px;transition:width .5s}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.highlight{background:linear-gradient(90deg,rgba(16,185,129,.08),transparent);border-left:3px solid var(--green);padding:12px 16px;border-radius:0 8px 8px 0;font-size:.87rem;color:var(--white);margin:16px 0}
+.cta-box{background:linear-gradient(135deg,#0F2A22,#122418);border:1px solid var(--green);border-radius:12px;padding:32px;text-align:center;margin-top:32px}
+.cta-box h3{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:8px}
+.cta-box p{color:var(--gray);font-size:.9rem;margin-bottom:20px}
+.btn{display:inline-block;background:var(--green);color:#000;font-weight:700;font-size:.88rem;padding:11px 28px;border-radius:6px;text-decoration:none;margin:4px}
+.btn-o{background:transparent;color:var(--green);border:1px solid var(--green)}
+.fonte{margin-top:40px;padding-top:20px;border-top:1px solid #1e3828;font-size:.76rem;color:#4a6860}
+footer{background:#050D0A;border-top:1px solid #1e3828;padding:24px 28px;text-align:center}
+footer p{color:var(--gray);font-size:.78rem}
+footer a{color:var(--green);text-decoration:none}
+@media(max-width:640px){.kpi-row{gap:16px}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nb">NORZEC <span>Brief</span></a>
+  <a href="index.html" class="back">← Voltar ao site</a>
+</nav>
+
+<section class="hero">
+<div class="hero-inner">
+  <span class="eyebrow">⚡ ENERGIA SOLAR · BEIRA, SOFALA</span>
+  <h1>Potencial <em>Solar</em><br>em Beira</h1>
+  <p class="hero-sub">Dados de radiação global horizontal para dimensionamento de sistemas fotovoltaicos, híbridos e off-grid — NASA POWER 2015–2023.</p>
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-v" style="color:var(--green)">5.45</div><div class="kpi-l">kWh/m²/dia (média)</div></div>
+    <div class="kpi"><div class="kpi-v" style="color:var(--amber)">4.00</div><div class="kpi-l">kWh/m²/dia (mín, Jun)</div></div>
+    <div class="kpi"><div class="kpi-v" style="color:var(--green)">6.47</div><div class="kpi-l">kWh/m²/dia (máx, Dez)</div></div>
+    <div class="kpi"><div class="kpi-v" style="color:var(--green)">Excelente</div><div class="kpi-l">classificação solar</div></div>
+  </div>
+</div>
+</section>
+<div class="body">
+  <div class="card">
+    <h3>☀️ Veredito Solar</h3>
+    <p><span class="badge badge-g">Potencial Excelente</span><span class="badge badge-g">5.45 kWh/m²/dia</span></p>
+    <p style="margin-top:10px">A média anual de <strong>5.45 kWh/m²/dia</strong> coloca Beira no patamar de <em>excelente</em> para fotovoltaico — acima da limiar de viabilidade económica (4.5 kWh/m²/dia) mesmo no mês mais fraco (Junho: 4.00 kWh/m²/dia). O dimensionamento deve usar <strong>Junho como mês-base</strong> para garantir geração mínima garantida.</p>
+  </div>
+  <div class="card">
+    <h3>📊 Radiação por mês — base para dimensionamento</h3>
+    <div class="bar-wrap">
+      <div class="bar-label"><span>Janeiro</span><span>6.40 kWh/m²/d</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:96%;background:var(--green)"></div></div>
+      <div class="bar-label" style="margin-top:6px"><span>Junho ← MÍNIMO</span><span style="color:var(--amber)">4.00 kWh/m²/d</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:58%;background:var(--amber)"></div></div>
+      <div class="bar-label" style="margin-top:6px"><span>Setembro</span><span>5.72 kWh/m²/d</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:84%;background:var(--teal)"></div></div>
+      <div class="bar-label" style="margin-top:6px"><span>Dezembro ← MÁXIMO</span><span style="color:var(--green)">6.47 kWh/m²/d</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--green)"></div></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>🔧 Estimativa painel 400Wp</h3>
+      <p>A 80% de eficiência de sistema:<br><br>
+      <strong>Mínimo (Jun):</strong> ~1.28 kWh/dia<br>
+      <strong>Média anual:</strong> ~1.74 kWh/dia<br>
+      <strong>Máximo (Dez):</strong> ~2.07 kWh/dia<br><br>
+      <span style="font-size:.8rem;color:var(--gray)">Limitação: estimativa teórica. Temperatura e sombreamento reduzem eficiência real. Verificar com medição local.</span></p>
+    </div>
+    <div class="card">
+      <h3>🌡 Temperatura e rendimento</h3>
+      <p>Tmax média em Outubro–Novembro: <strong>36°C+</strong>.<br><br>
+      Painéis perdem ~0.4%/°C acima de 25°C (coef. típico). A <strong>36°C</strong>, perda estimada de ~4.4% de potência de pico.<br><br>
+      <span style="font-size:.8rem;color:var(--gray)">Considerar ventilação ou montagem elevada em coberturas metálicas.</span></p>
+    </div>
+  </div>
+  <div class="highlight">📌 <strong>Delta sazonal: 2.47 kWh/m²/dia</strong> entre Junho e Dezembro. Sistemas com bateria ou híbridos devem ser dimensionados para garantir autonomia no mínimo sazonal, não na média anual.</div>
+  <div class="card">
+    <h3>🛡 Recomendações NORZEC</h3>
+    <p>
+      <strong>1. Dimensionamento pelo mínimo de Junho</strong> (4.00 kWh/m²/dia) para sistemas autónomos críticos.<br><br>
+      <strong>2. Perfil de geração mensal</strong> — dados hora-a-hora disponíveis via NASA POWER para análise mais fina.<br><br>
+      <strong>3. Análise de ROI</strong> — com base na tarifa local de energia e custo de diesel para gerador.<br><br>
+      <strong>4. Combinação PV + bateria vs PV + rede</strong> — estudo de configuração óptima por caso de uso.
+    </p>
+  </div>
+  <div class="cta-box">
+    <h3>Quer um estudo solar detalhado?</h3>
+    <p>A NORZEC produz análises hora-a-hora, perfis de autoconsumo e estudos de ROI para sistemas solares em Moçambique.</p>
+    <a href="index.html#contacto" class="btn">Solicitar estudo</a>
+    <a href="NORZEC_Case002_Beira_ClimateIntelligence.html" class="btn btn-o">Relatório completo</a>
+  </div>
+  <div class="fonte">Fonte: NASA POWER LARC · ALLSKY_SFC_SW_DWN (GHI) convertido de MJ/m²/dia ÷ 3.6 = kWh/m²/dia · Beira, 2015–2023 · Eficiência de sistema: estimativa (não medida).</div>
+</div>
+<footer>
+  <p>NORZEC, LIMITADA · Chimoio, Manica, Moçambique · <a href="https://norzec.github.io">norzec.github.io</a></p>
+  <p style="margin-top:6px">Dados: NASA POWER LARC · Beira, Sofala · 2015–2023 · Física postulada · Incerteza declarada</p>
+</footer>
+</body></html>
